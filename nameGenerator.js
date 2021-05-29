@@ -6,11 +6,12 @@ let names = Array("Harry", "Bert", "Henk", "Sebastiaan", "Papa","Rutger", "Mama"
 
 let objects = Array("stoep", "dinosaurus", "klokken", "lampen","mieren","appelmoes", "poep", "bank", "goudvis","ramen","pizza","banannen","blopvis","pennen","bomen","schoenen","fietspompen","fietsen","deur","bezem","eekhoorn","muis","tafel","cavia","koek","luiaart","paarden","melkpak","chocola","bananentros","cavia","brulaap","duiven","ezel","geiten","neushoorn","zwijnen","struisvogel","varken","parkiet","stokbrood","boeken")
 
+let action = Array("inspecteur", "zitter", "liefhebber", "visser", "schepper", "specialist", "schoonmaker","verkoper","wasser","bakker","temmer","progammeur","vlogger")
 
 let livingPlaces = Array("huis","grot","hutje","auto","boomhut","helicopter","snoepautomaat","kast","flat","snackbar","school","doos","fabriek", "boot")
 
 
 window.onload = function() {
-    document.getElementById("randaam").textContent = randomElement(names)
+    document.getElementById("randaam").textContent = randomElement(names) + " de " + randomElement(objects) + " " + randomElement(action);
 }
 
