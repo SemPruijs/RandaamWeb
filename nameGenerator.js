@@ -17,6 +17,7 @@ let livingPlaces = Array("huis", "grot", "hutje", "auto", "boomhut", "helicopter
 function generateRandaam() {
     document.getElementById("emoji").innerHTML = randomElement(emojis)
     document.getElementById("randaam").innerHTML = randomElement(names) + " de " + randomElement(objects) + " " + randomElement(action);
+    document.getElementById("livingPlace").innerHTML = "woont in een " + randomElement(livingPlaces)
 }
 
 window.onload = generateRandaam
