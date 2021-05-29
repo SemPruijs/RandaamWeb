@@ -13,8 +13,13 @@ let emojis = Array("😀","😃","😄","😁","😆","😅","😂","🤣","☺�
 let livingPlaces = Array("huis","grot","hutje","auto","boomhut","helicopter","snoepautomaat","kast","flat","snackbar","school","doos","fabriek", "boot")
 
 
-window.onload = function() {
+function generateRandaam() {
     document.getElementById("emoji").innerHTML = randomElement(emojis)
     document.getElementById("randaam").innerHTML = randomElement(names) + " de " + randomElement(objects) + " " + randomElement(action);
 }
+
+window.onload = generateRandaam
+
+window.onclick = generateRandaam
+
 

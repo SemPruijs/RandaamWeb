@@ -1,3 +1,16 @@
 body {
-    background-color: darkolivegreen;
+    /*TODO: set background color depending on theme from device*/
+    background-color: white;
+    font-size: 30pt;
 }
+
+#randaam {
+    text-align: center;
+}
+
+#emoji {
+    text-align: center;
+    font-size: 100pt;
+}
+
+
