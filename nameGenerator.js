@@ -2,6 +2,10 @@ function randomElement(array) {
     return array[Math.floor(Math.random() * array.length)]
 }
 
+function randomNumber(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
 let names = Array("Harry", "Bert", "Henk", "Sebastiaan", "Papa", "Rutger", "Mama", "Lars", "Steven", "Jannes", "Iwan", "Milan", "Bertwim", "Amgela", "Jorgiam", "Hansje", "Pim", "Sandra", "Hennie", "Achmet", "Dirkjan", "Barbaba", "Jeroen", "Riejan", "Willem", "Leo", "Meneer", "Bas", "Dennis", "Jan", "Kees", "Lies", "Sem", "Jan", "Cor", "Lucas", "Finn", "Daan", "Levi", "Milan", "Bram", "Luuk", "Emma", "Tess", "Sophie", "Julia", "Anna", "Mila", "Sara", "Luuk", "Jesse", "Mees", "Thomas", "Sam", "Thijs", "Adam", "Max", "Jullian", "Hugo", "Gijs", "Benjamin", "Tim", "Ruben", "Teun", "Olivier", "Sven", "David", "Stijn", "Tom", "Isa", "Noa", "Jasmijn", "Esmee", "Sanne", "Joël", "Emmanuel", "Nathan", "Tobias", "Alex", "Daniële", "Elias", "Carlijn", "Caroline", "Lisanne", "Marije", "Tirza", "Naomi", "Joyce", "Indy", "Marith", "Micha", "Hayanne", "Isa", "Nadine", "Aron")
 
 
@@ -14,7 +18,29 @@ let emojis = Array("😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣
 let livingPlaces = Array("huis", "grot", "hutje", "auto", "boomhut", "helicopter", "snoepautomaat", "kast", "flat", "snackbar", "school", "doos", "fabriek", "boot")
 
 
+function setRarity(rarity) {
+    //if you change these numbers with inspect element then you do not have any friends :-)
+    if (rarity > 9999 && rarity <= 10000) {
+    //    super legendary
+        return "Super legendarisch!!!"
+    } else if (rarity > 9990 && rarity <= 10000) {
+    // legendary
+        return "legendarisch!!!"
+    } else if (rarity > 9900 && rarity <= 10000) {
+        //epic
+        return "episch!!"
+    }  else if (rarity > 9000 && rarity <= 10000) {
+        //rare
+        return "zeldzaam!"
+    } else {
+        //normal
+        return "normaal"
+    }
+}
+
 function generateRandaam() {
+    let personRarity = randomNumber(1, 10000)
+    document.getElementById("rarity").innerHTML = setRarity(personRarity)
     document.getElementById("emoji").innerHTML = randomElement(emojis)
     document.getElementById("randaam").innerHTML = randomElement(names) + " de " + randomElement(objects) + " " + randomElement(action);
     document.getElementById("livingPlace").innerHTML = "woont in een " + randomElement(livingPlaces)

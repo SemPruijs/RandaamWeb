@@ -1,8 +1,10 @@
 body {
     /*TODO: set background color depending on theme from device*/
     background-color: white;
-    font-size: 30pt;
     display: flex;
+    margin: 0;
+    padding: 0;
+    /*centers items vertically*/
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -10,15 +12,15 @@ body {
     min-height: 40vh;
 }
 
-#randaam {
-    text-align: center;
-}
-
 #emoji {
     text-align: center;
     font-size: 100pt;
 }
 
+#randaam {
+    text-align: center;
+    font-size: 30pt;
+}
 
 #livingPlace {
     font-size: 20pt;
