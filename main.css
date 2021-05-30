@@ -26,3 +26,8 @@ body {
 #livingPlace {
     font-size: 20pt;
 }
+
+#rarity {
+    position: absolute;
+    top: 20px;
+}
