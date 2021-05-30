@@ -17,30 +17,32 @@ let emojis = Array("😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣
 
 let livingPlaces = Array("huis", "grot", "hutje", "auto", "boomhut", "helicopter", "snoepautomaat", "kast", "flat", "snackbar", "school", "doos", "fabriek", "boot")
 
+//rarity
+let rarityNames = Array("Super legendarisch!!!", "legendarisch!!!", "episch!!", "zeldzaam!", "normaal")
 
-function setRarity(rarity) {
+function decideRarity(rarity) {
     //if you change these numbers with inspect element then you do not have any friends :-)
     if (rarity > 9999) {
     //    super legendary
-        return "Super legendarisch!!!"
+        return 0
     } else if (rarity > 9990) {
     // legendary
-        return "legendarisch!!!"
+        return 1
     } else if (rarity > 9900) {
         //epic
-        return "episch!!"
+        return 2
     }  else if (rarity > 9000) {
         //rare
-        return "zeldzaam!"
+        return 3
     } else {
         //normal
-        return "normaal"
+        return 4
     }
 }
 
 function generateRandaam() {
     let personRarity = randomNumber(1, 10000)
-    document.getElementById("rarity").innerHTML = setRarity(personRarity)
+    document.getElementById("rarity").innerHTML = rarityNames[decideRarity(personRarity)]
     document.getElementById("emoji").innerHTML = randomElement(emojis)
     document.getElementById("randaam").innerHTML = randomElement(names) + " de " + randomElement(objects) + " " + randomElement(action);
     document.getElementById("livingPlace").innerHTML = "woont in een " + randomElement(livingPlaces)
