@@ -40,9 +40,13 @@ function decideRarity(rarity) {
     }
 }
 
-function generateRandaam() {
+function setRarity() {
     let personRarity = randomNumber(1, 10000)
     document.getElementById("rarity").innerHTML = rarityNames[decideRarity(personRarity)]
+}
+
+function generateRandaam() {
+    setRarity()
     document.getElementById("emoji").innerHTML = randomElement(emojis)
     document.getElementById("randaam").innerHTML = randomElement(names) + " de " + randomElement(objects) + " " + randomElement(action);
     document.getElementById("livingPlace").innerHTML = "woont in een " + randomElement(livingPlaces)
