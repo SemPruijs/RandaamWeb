@@ -20,14 +20,15 @@ let livingPlaces = Array("huis", "grot", "hutje", "auto", "boomhut", "helicopter
 //rarity
 let rarityNames = Array("Super legendarisch!!!", "legendarisch!!!", "episch!!", "zeldzaam!", "normaal")
 let backgroundColor = Array("rgb(57,30,214)", "rgb(14,22,109)", "rgb(252,37,233)", "rgb(253,147,38)", "rgb(255, 255, 255)")
+let textColor = Array("rgb(133,246,118)", "rgb(255, 255, 255)", "rgb(255, 255, 255)", "rgb(255, 255, 255)", "rgb(0, 0, 0)")
 
 function decideRarity(rarity) {
     //if you change these numbers with inspect element then you do not have any friends :-)
     if (rarity > 9999) {
-        //    super legendary
+        //super legendary
         return 0
     } else if (rarity > 9990) {
-        // legendary
+        //legendary
         return 1
     } else if (rarity > 9900) {
         //epic
@@ -45,6 +46,7 @@ function setRarity() {
     let personRarity = randomNumber(1, 10000)
     document.getElementById("rarity").innerHTML = rarityNames[decideRarity(personRarity)]
     document.getElementById("body").style.background = backgroundColor[decideRarity(personRarity)]
+    document.getElementById("body").style.color = textColor[decideRarity(personRarity)]
 }
 
 function generateRandaam() {
