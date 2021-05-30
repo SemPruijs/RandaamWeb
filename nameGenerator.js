@@ -3,7 +3,7 @@ function randomElement(array) {
 }
 
 function randomNumber(min, max) {
-    return Math.random() * (max - min) + min;
+    return (Math.random() * (max - min) + min).toFixed(0);
 }
 
 let names = Array("Harry", "Bert", "Henk", "Sebastiaan", "Papa", "Rutger", "Mama", "Lars", "Steven", "Jannes", "Iwan", "Milan", "Bertwim", "Amgela", "Jorgiam", "Hansje", "Pim", "Sandra", "Hennie", "Achmet", "Dirkjan", "Barbaba", "Jeroen", "Riejan", "Willem", "Leo", "Meneer", "Bas", "Dennis", "Jan", "Kees", "Lies", "Sem", "Jan", "Cor", "Lucas", "Finn", "Daan", "Levi", "Milan", "Bram", "Luuk", "Emma", "Tess", "Sophie", "Julia", "Anna", "Mila", "Sara", "Luuk", "Jesse", "Mees", "Thomas", "Sam", "Thijs", "Adam", "Max", "Jullian", "Hugo", "Gijs", "Benjamin", "Tim", "Ruben", "Teun", "Olivier", "Sven", "David", "Stijn", "Tom", "Isa", "Noa", "Jasmijn", "Esmee", "Sanne", "Joël", "Emmanuel", "Nathan", "Tobias", "Alex", "Daniële", "Elias", "Carlijn", "Caroline", "Lisanne", "Marije", "Tirza", "Naomi", "Joyce", "Indy", "Marith", "Micha", "Hayanne", "Isa", "Nadine", "Aron")
@@ -51,6 +51,7 @@ function setRarity() {
 
 function generateRandaam() {
     setRarity()
+    document.getElementById("income").innerHTML = "&euro; " + randomNumber(1, 1000).toString() + " / week"
     document.getElementById("emoji").innerHTML = randomElement(emojis)
     document.getElementById("randaam").innerHTML = randomElement(names) + " de " + randomElement(objects) + " " + randomElement(action);
     document.getElementById("livingPlace").innerHTML = "woont in een " + randomElement(livingPlaces)
