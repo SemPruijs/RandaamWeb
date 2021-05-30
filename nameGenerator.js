@@ -20,16 +20,16 @@ let livingPlaces = Array("huis", "grot", "hutje", "auto", "boomhut", "helicopter
 
 function setRarity(rarity) {
     //if you change these numbers with inspect element then you do not have any friends :-)
-    if (rarity > 9999 && rarity <= 10000) {
+    if (rarity > 9999) {
     //    super legendary
         return "Super legendarisch!!!"
-    } else if (rarity > 9990 && rarity <= 10000) {
+    } else if (rarity > 9990) {
     // legendary
         return "legendarisch!!!"
-    } else if (rarity > 9900 && rarity <= 10000) {
+    } else if (rarity > 9900) {
         //epic
         return "episch!!"
-    }  else if (rarity > 9000 && rarity <= 10000) {
+    }  else if (rarity > 9000) {
         //rare
         return "zeldzaam!"
     } else {
