@@ -18,35 +18,52 @@ let emojis = Array("😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣
 let livingPlaces = Array("huis", "grot", "hutje", "auto", "boomhut", "helicopter", "snoepautomaat", "kast", "flat", "snackbar", "school", "doos", "fabriek", "boot")
 
 //rarity
-let rarityNames = Array("Super legendarisch!!!", "legendarisch!!!", "episch!!", "zeldzaam!", "normaal")
-let backgroundColor = Array("rgb(57,30,214)", "rgb(14,22,109)", "rgb(252,37,233)", "rgb(253,147,38)", "rgb(255, 255, 255)")
-let textColor = Array("rgb(133,246,118)", "rgb(255, 255, 255)", "rgb(255, 255, 255)", "rgb(255, 255, 255)", "rgb(0, 0, 0)")
+let Rarity = class {
+    constructor(name, backgroundColor, textColor) {
+        this.name = name
+        this.backgroundColor = backgroundColor
+        this.textColor = textColor
+    }
+
+    apply() {
+        document.getElementById("rarity").innerHTML = this.name
+        document.getElementById("body").style.background = this.backgroundColor
+        document.getElementById("body").style.color = this.textColor
+    }
+}
+
+let rarities = Array(
+    new Rarity("Super legendarisch!!!", "rgb(57,30,214)", "rgb(133,246,118)"),
+    new Rarity("legendarisch!!!", "rgb(14,22,109)", "rgb(255, 255, 255)"),
+    new Rarity("episch!!", "rgb(252,37,233)", "rgb(255, 255, 255)"),
+    new Rarity("zeldzaam", "rgb(253,147,38)", "rgb(255, 255, 255)"),
+    new Rarity("normaal", "rgb(255, 255, 255)", "rgb(0, 0, 0)")
+)
+
 
 function decideRarity(rarity) {
     //if you change these numbers with inspect element then you do not have any friends :-)
     if (rarity > 9999) {
         //super legendary
-        return 0
+        return rarities[0]
     } else if (rarity > 9990) {
         //legendary
-        return 1
+        return rarities[1]
     } else if (rarity > 9900) {
         //epic
-        return 2
+        return rarities[2]
     } else if (rarity > 9000) {
         //rare
-        return 3
+        return rarities[3]
     } else {
         //normal
-        return 4
+        return rarities[4]
     }
 }
 
 function setRarity() {
     let personRarity = randomNumber(1, 10000)
-    document.getElementById("rarity").innerHTML = rarityNames[decideRarity(personRarity)]
-    document.getElementById("body").style.background = backgroundColor[decideRarity(personRarity)]
-    document.getElementById("body").style.color = textColor[decideRarity(personRarity)]
+    decideRarity(personRarity).apply();
 }
 
 function generateRandaam() {
