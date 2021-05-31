@@ -41,3 +41,10 @@ body {
 #livingPlace {
     font-size: 20pt;
 }
+
+#logo {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12pt;
+}
