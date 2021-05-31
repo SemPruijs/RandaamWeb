@@ -66,8 +66,32 @@ function setRarity() {
     decideRarity(personRarity).apply();
 }
 
+
+function incomeColor(income) {
+    if (income >= 990) {
+        return "rgb(226,101,255)"
+    } else if (income >= 900) {
+        return "rgb(101,134,255)"
+    } else if (income >= 600) {
+        return "rgb(101,255,104)"
+    } else if (income >= 400) {
+        return "rgb(224,207,46)"
+    } else if (income >= 200) {
+        return "rgb(255,145,101)"
+    } else {
+        return "rgb(255,101,101)"
+    }
+}
+
+function setIncome() {
+    let income = randomNumber(1, 1000);
+    document.getElementById("income").innerHTML = "&euro; " + income.toString() + " / week"
+    document.getElementById("income").style.color = incomeColor(income)
+}
+
 function generateRandaam() {
     setRarity()
+    setIncome()
     document.getElementById("age").innerHTML = randomNumber(1, 100).toString() + " jaar oud"
     document.getElementById("income").innerHTML = "&euro; " + randomNumber(1, 1000).toString() + " / week"
     document.getElementById("emoji").innerHTML = randomElement(emojis)
