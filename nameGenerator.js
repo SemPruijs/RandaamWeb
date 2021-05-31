@@ -1,3 +1,6 @@
+// looks at the theme
+let darkModeSet = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
 function randomElement(array) {
     return array[Math.floor(Math.random() * array.length)]
 }
@@ -37,7 +40,7 @@ let rarities = Array(
     new Rarity("legendarisch!!!", "rgb(14,22,109)", "rgb(255, 255, 255)"),
     new Rarity("episch!!", "rgb(252,37,233)", "rgb(255, 255, 255)"),
     new Rarity("zeldzaam", "rgb(253,147,38)", "rgb(255, 255, 255)"),
-    new Rarity("normaal", "rgb(255, 255, 255)", "rgb(0, 0, 0)")
+    darkModeSet ? new Rarity("normaal", "rgb(19, 19, 19)", "rgb(255, 255, 255)") : new Rarity("normaal", "rgb(255, 255, 255)", "rgb(0, 0, 0)")
 )
 
 
@@ -97,6 +100,7 @@ function generateRandaam() {
     document.getElementById("emoji").innerHTML = randomElement(emojis)
     document.getElementById("randaam").innerHTML = randomElement(names) + " de " + randomElement(objects) + " " + randomElement(action)
     document.getElementById("livingPlace").innerHTML = "woont in een " + randomElement(livingPlaces)
+    console.log(darkModeSet)
 }
 
 window.onload = generateRandaam
