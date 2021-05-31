@@ -13,6 +13,12 @@ body {
     min-height: 40vh;
 }
 
+
+#rarity {
+    position: absolute;
+    top: 20px;
+}
+
 #emoji {
     text-align: center;
     font-size: 100pt;
@@ -21,17 +27,17 @@ body {
 #randaam {
     text-align: center;
     font-size: 30pt;
+    margin: 0 10px 25pt 10px;
 }
 
-#livingPlace {
-    font-size: 20pt;
-}
-
-#rarity {
-    position: absolute;
-    top: 20px;
+#age {
+    font-size: 18pt;
 }
 
 #income {
     font-size: 18pt;
+}
+
+#livingPlace {
+    font-size: 20pt;
 }

@@ -68,9 +68,10 @@ function setRarity() {
 
 function generateRandaam() {
     setRarity()
+    document.getElementById("age").innerHTML = randomNumber(1, 100).toString() + " jaar oud"
     document.getElementById("income").innerHTML = "&euro; " + randomNumber(1, 1000).toString() + " / week"
     document.getElementById("emoji").innerHTML = randomElement(emojis)
-    document.getElementById("randaam").innerHTML = randomElement(names) + " de " + randomElement(objects) + " " + randomElement(action);
+    document.getElementById("randaam").innerHTML = randomElement(names) + " de " + randomElement(objects) + " " + randomElement(action)
     document.getElementById("livingPlace").innerHTML = "woont in een " + randomElement(livingPlaces)
 }
 
