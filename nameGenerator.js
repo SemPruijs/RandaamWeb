@@ -100,7 +100,6 @@ function generateRandaam() {
     document.getElementById("emoji").innerHTML = randomElement(emojis)
     document.getElementById("randaam").innerHTML = randomElement(names) + " de " + randomElement(objects) + " " + randomElement(action)
     document.getElementById("livingPlace").innerHTML = "woont in een " + randomElement(livingPlaces)
-    console.log(darkModeSet)
 }
 
 window.onload = generateRandaam
