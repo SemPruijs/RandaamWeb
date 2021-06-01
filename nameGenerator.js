@@ -104,7 +104,4 @@ function generateRandaam() {
 
 window.onload = generateRandaam
 
-window.onclick = generateRandaam
-
 window.onkeydown = generateRandaam
-
