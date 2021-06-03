@@ -36,6 +36,7 @@ let Rarity = class {
 }
 
 let rarities = Array(
+    //name, background color, text color
     new Rarity("Super legendarisch!!!", "rgb(57,30,214)", "rgb(133,246,118)"),
     new Rarity("legendarisch!!!", "rgb(14,22,109)", "rgb(255, 255, 255)"),
     new Rarity("episch!!", "rgb(252,37,233)", "rgb(255, 255, 255)"),
